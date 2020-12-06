@@ -374,5 +374,9 @@ height: 15%;
   display: inline-block;
   height: 150px;
 
-} 
+}
+.wrapper .accordion_wrap .accordion_body .lokacija {
+  display: flex;
+  justify-content: center;
+  }
 
