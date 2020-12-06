@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"> </script>
+    
+    <script>
+        $(document).ready(function () {
+            $(".accordion_header").click(function () {
+                $(".accordion_header").removeClass("active");
+                $(this).addClass("active");
+            })
+        })
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">BE FIT</a>
+        <div class="menu-toggle">
+            <img src="slike/menu.png" id="menu" alt="" onclick="showClose()">
+            <img src="slike/close.png" id="close" alt="" onclick="showMenu()">
+
+        </div>
+        <nav class="regular" id="options">
+            <ul>
+                <li> <a href="index.html">Početna</a> </li>
+                <li> <a href="treninzi.html">Cenovnik</a> </li>
+                <li> <a href="prijava.html">Prijava</a> </li>
+                <li> <a href="#" class="active">Kontakt</a> </li>
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+
+    <div class="wrapper">
+        <h2>Gde nas možete naći:</h2>
+
+        <div class="accordion_wrap">
+            <div class="accordion_header">
+                Vračar
+            </div>
+            <div class="accordion_body">
+                <a target="_blank" href="https://www.google.com/maps/place/Fitnes+Centar+%22BE+FIT%22+Vra%C4%8Dar/@44.8017655,20.4824323,15z/data=!4m2!3m1!1s0x0:0xee9ab244fee7fda9?sa=X&ved=2ahUKEwiTs4TRh7jtAhUZBhAIHa3-CPIQ_BIwCnoECBYQBQ">Vojvode Šupljikca 14</a>
+                <p>info tel. +381 61 258 699</p>
+            </div>
+        </div>
+
+        <div class="accordion_wrap">
+            <div class="accordion_header">
+                Medaković 3
+            </div>
+            <div class="accordion_body">
+                <a target="_blank"
+                    href="https://www.google.com/maps/place/Be+fit+fitnes+centar/@44.7700291,20.5101685,15z/data=!4m2!3m1!1s0x0:0xd596c1ff1129e8a1?sa=X&ved=2ahUKEwjXmOaqh7jtAhVriIsKHWKYBRgQ_BIwCnoECBIQBQ">Pavla
+                    Popovića 33a</a>
+                <p>info tel. +381 60 062 2288</p>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"> </script>
+    <script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slideshow').cycle({
+                fx: 'fade' 
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">BE FIT</a>
+        <div class="menu-toggle">
+            <img src="slike/menu.png" id="menu" alt="" onclick="showClose()">
+            <img src="slike/close.png" id="close" alt="" onclick="showMenu()">
+
+        </div>
+        <nav class="regular" id="options">
+            <ul>
+                <li> <a href="#" class="active">Početna</a> </li>
+                <li> <a href="treninzi.html">Cenovnik</a> </li>
+                <li> <a href="prijava.html">Prijava</a> </li>
+                <li> <a href="kontakt.html">Kontakt</a> </li>
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+
+
+    <div id="about">
+
+        <div id="description">
+            <p>FITNES CENTAR BE FIT nudi svojim članovima veliki izbor trening programa koje vode profesionalni treneri i koji su tu uvek da vam pomognu da ostvarite vaše želje o dobrom izgledu i zdravlju.</p>
+        </div>
+
+        <div class="slideshowBack">
+            <div class="slideshow" style="position: relative;">
+                <img src="http://malsup.github.com/images/beach1.jpg" width="700" height="700" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 5; opacity: 0; width: 200px; height: 200px;">
+                <img src="http://malsup.github.com/images/beach2.jpg" width="700" height="700" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 5; opacity: 0; width: 200px; height: 200px;">
+                <img src="http://malsup.github.com/images/beach3.jpg" width="700" height="700" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 0.0573843; width: 200px; height: 200px;">
+                <img src="http://malsup.github.com/images/beach4.jpg" width="700" height="700" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 6; opacity: 0.942616; width: 200px; height: 200px;">
+                <img src="http://malsup.github.com/images/beach5.jpg" width="700" height="700" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 5; opacity: 0; width: 200px; height: 200px;">
+            </div>
+        </div>
+
+    </div>
+
+
+    
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
