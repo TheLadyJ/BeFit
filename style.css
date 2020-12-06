@@ -49,7 +49,6 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
- 
 }
 
 nav ul li {
@@ -65,7 +64,6 @@ nav ul li a {
   height: 20px;
 }
 
-
 nav ul li a.active,
 nav ul li a:hover {
   background: #a72d38;
@@ -73,20 +71,18 @@ nav ul li a:hover {
   transition: 0.5s;
 }
 
-nav.dropDown{
-    display: block;
-    width: 100%;
+nav.dropDown {
+  display: block;
+  width: 100%;
 }
 
-nav.dropDown ul{
-    display: block;
+nav.dropDown ul {
+  display: block;
 }
-
 
 /*POČETNA stranica*/
 
-
-#about{
+#about {
   display: flex;
   flex-flow: column;
   justify-content: space-around;
@@ -96,56 +92,53 @@ nav.dropDown ul{
 
 #description {
   padding: 15px;
-  background-color: #d7e0eb;
+  background-color: #ffffff;
   border: 2px solid #925156;
   border-radius: 5px;
 }
 
-.slideshowBack{
-  margin: 80px;
-  background-color: #d7e0eb;
-  border: 2px solid #925156;
-  border-radius: 5px;
-}
 
-.slideshow{
+
+.slideshow {
   float: center;
-  margin: 80px auto 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
 }
 
-
-
+.slideshow img {
+  width: 95%;
+  height: auto;
+  padding: 2%;
+}
 
 @media (min-width: 900px) {
-  #description{
-    width: 90%;
+  #description {
+    width: 60%;
   }
 
-  .slideshowBack{
-    width: 80%;
-    height: 300px;
+  .slideshowBack {
+    width: 600px;
+    height: 600px;
   }
+
+
 }
-
-
 
 @media (max-width: 900px) {
-  #description{
-    width: 800px;
+  #description {
+    width: 80%;
   }
 
-  .slideshowBack{
-    width: 600px;
-    height: 300px;
+  .slideshowBack {
+    width: 85%;
+    height: 40%;
   }
+
 }
 
-
-
-
-
 /*CENOVNIK stranica*/
-
 
 img {
   float: right;
@@ -155,62 +148,61 @@ img {
   cursor: pointer;
   text-align: center;
 }
-.tabContainer{
+.tabContainer {
   width: 100%;
   height: 350px;
-
 }
-.tabContainer .buttonContainer{
-height: 15%;
+.tabContainer .buttonContainer {
+  height: 15%;
 }
-.tabContainer .buttonContainer button{
+.tabContainer .buttonContainer button {
   width: 25%;
   height: 100%;
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
-  padding:10px;
+  padding: 10px;
   font-family: sans-serif;
   font-size: 18px;
   background-color: #eee;
 }
-.tabContainer .buttonContainer button:hover{
+.tabContainer .buttonContainer button:hover {
   background-color: #d7d4d4;
 }
-.tabContainer .tabPanel{
+.tabContainer .tabPanel {
   height: 120%;
   border: none;
-  
+
   outline: none;
   background-color: gray;
   color: white;
   text-align: left;
   padding-top: 50px;
-  
+
   box-sizing: border-box;
   font-family: sans-serif;
   font-size: 22px;
-  display:none;
+  display: none;
 }
-.tabContainer .tabPanel .podela{
+.tabContainer .tabPanel .podela {
   display: flex;
 }
-.tabContainer .tabPanel .podela .first{
+.tabContainer .tabPanel .podela .first {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
-  background: rgba(56, 55, 55, 0.5); 
+
+  background: rgba(56, 55, 55, 0.5);
   flex: 1;
   padding: 1rem;
 }
-.tabContainer .tabPanel .podela .second{
+.tabContainer .tabPanel .podela .second {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgba(56, 55, 55, 0.3); 
-   
+  background: rgba(56, 55, 55, 0.3);
+
   flex: 1;
   padding: 1rem;
 }
@@ -224,33 +216,23 @@ height: 15%;
   }
 }
 
-
-
 @media (max-width: 1200px) {
-    header {
-        margin: 20px;
-      }
-
-  nav.regular{
-      display: none;
+  header {
+    margin: 20px;
   }
-  
-  #close {
+
+  nav.regular {
     display: none;
   }
 
+  #close {
+    display: none;
+  }
 }
-
-
-
-
-
-
 
 /*KONTAKT stranica*/
 
-
- .wrapper{
+.wrapper {
   margin: 80px auto 0;
   background-color: #d7e0eb;
   border: 2px solid #925156;
@@ -258,27 +240,25 @@ height: 15%;
 }
 
 @media (min-width: 900px) {
-  .wrapper{
+  .wrapper {
     width: 800px;
-    
   }
 }
 
 @media (max-width: 900px) {
-  .wrapper{
+  .wrapper {
     width: 90%;
-    
   }
 }
 
-.wrapper h2{
+.wrapper h2 {
   padding: 15px;
   color: #99202a;
   position: relative;
   width: 23rem;
 }
 
-.wrapper .accordion_wrap{
+.wrapper .accordion_wrap {
   width: 100%;
 }
 
@@ -286,14 +266,13 @@ height: 15%;
   height: 30px;
   background-color: #ffffff;
   padding: 15px;
-  color:  #ad3f48;
+  color: #ad3f48;
   font-size: 20px;
   font-weight: 700;
   border-bottom: 2px solid #a72d38;
   position: relative;
   cursor: pointer;
 }
-
 
 .wrapper .accordion_wrap:last-child .accordion_header {
   border-bottom: 2px solid transparent;
@@ -309,7 +288,7 @@ height: 15%;
 }
 
 .wrapper .accordion_wrap .accordion_header:before,
-.wrapper .accordion_wrap .accordion_header:after{
+.wrapper .accordion_wrap .accordion_header:after {
   content: "";
   position: absolute;
   transform: translateY(-50%);
@@ -320,17 +299,17 @@ height: 15%;
   background: #a72d38;
 }
 
-.wrapper .accordion_wrap .accordion_header:after{
+.wrapper .accordion_wrap .accordion_header:after {
   transform: rotate(-90deg);
   transition: all 0.5s ease;
 }
 
 .wrapper .accordion_wrap .accordion_header:hover:before,
-.wrapper .accordion_wrap .accordion_header:hover:after{
+.wrapper .accordion_wrap .accordion_header:hover:after {
   background: #861a23;
 }
 
-.wrapper .accordion_wrap .accordion_body{
+.wrapper .accordion_wrap .accordion_body {
   width: 100%;
   height: 150px;
   transition: all 0.5s ease;
@@ -338,41 +317,38 @@ height: 15%;
   display: none;
 }
 
-.wrapper .accordion_wrap .accordion_body p{
+.wrapper .accordion_wrap .accordion_body p {
   padding: 15px;
   font-size: 17px;
   line-height: 22px;
   color: #ffffff;
 }
 
-.wrapper .accordion_wrap .accordion_body a{
-
+.wrapper .accordion_wrap .accordion_body a {
   padding: 15px;
   font-size: 17px;
   line-height: 70px;
   color: #ffffff;
 }
 
-.wrapper .accordion_wrap .accordion_header.active{
+.wrapper .accordion_wrap .accordion_header.active {
   color: #861a23;
   border-color: #861a23;
 }
 
-.wrapper .accordion_wrap:last-child .accordion_header.active{
+.wrapper .accordion_wrap:last-child .accordion_header.active {
   border-bottom: 2px solid #a72d38;
 }
 
 .wrapper .accordion_wrap .accordion_header.active:before,
-.wrapper .accordion_wrap .accordion_header.active:after{
+.wrapper .accordion_wrap .accordion_header.active:after {
   background: #a03a42;
 }
 
-.wrapper .accordion_wrap .accordion_header.active:after{
+.wrapper .accordion_wrap .accordion_header.active:after {
   transform: rotate(0);
 }
-.wrapper .accordion_wrap .accordion_header.active + .accordion_body{
+.wrapper .accordion_wrap .accordion_header.active + .accordion_body {
   display: inline-block;
   height: 150px;
-
-} 
-
+}
