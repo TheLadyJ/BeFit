@@ -6,12 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css" type="text/css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"> </script>
-    <script>
-        $(document).ready(function () {
-            
-        })
-    </script>
+
 
 </head>
 
@@ -20,13 +15,13 @@
     <header>
         <a href="index.html" class="logo">BE FIT</a>
         <div class="menu-toggle">
-            <img src="slike/menu.png" id="menu" alt="" onclick="showClose()">   
+            <img src="slike/menu.png" id="menu" alt="" onclick="showClose()">
             <img src="slike/close.png" id="close" alt="" onclick="showMenu()">
-            
+
         </div>
         <nav class="regular" id="options">
             <ul>
-                <li> <a href="index.html" >Početna</a> </li>
+                <li> <a href="index.html">Početna</a> </li>
                 <li> <a href="treninzi.html">Cenovnik</a> </li>
                 <li> <a href="#" class="active">Prijava</a> </li>
                 <li> <a href="kontakt.html">Kontakt</a> </li>
@@ -34,6 +29,92 @@
         </nav>
         <div class="clearfix"></div>
     </header>
+
+
+
+    <div class="wrapPrijava">
+        <div class="title">
+            Prijava
+        </div>
+        <div class="form">
+            <form>
+
+                <div class="input_field">
+                    <label>Ime: </label>
+                    <input type="text" class="input" required>
+                </div>
+                <div class="input_field">
+                    <label>Prezime: </label>
+                    <input type="text" class="input" required>
+                </div>
+                <div class="input_field">
+                    <label>Email adresa: </label>
+                    <input type="text" class="input" required>
+                </div>
+                <div class="input_field">
+                    <label>Lozinka: </label>
+                    <input type="password" class="input" required>
+                </div>
+                <div class="input_field">
+                    <label>Potvrdi lozinku: </label>
+                    <input type="password" class="input" required>
+                </div>
+
+                <div class="input_field">
+                    <label>Kontakt telefon: </label>
+                    <input type="text" class="input" required>
+                </div>
+
+                <div class="input_field">
+                    <label>Odaberite lokaciju: </label>
+                    <div class="custom_select">
+                        <select>
+                            <option> Medaković III </option>
+                            <option> Vračar </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input_field">
+                    <label> Izaberi termin: </label>
+                    <input type="radio" name="termin" class="input"> 10h
+                    <input type="radio" name="termin" class="input"> 12h
+                    <input type="radio" name="termin" class="input"> 14h
+                    <input type="radio" name="termin" class="input"> 16h
+                    <input type="radio" name="termin" class="input"> 18h
+                    <input type="radio" name="termin" class="input"> 20h
+                </div>
+
+
+                <div class="input_field">
+                    <label>Izaberi trening: </label>
+                    <input type="checkbox" class="checkbox"> <span class="checkboxtext">Kardio</span>
+                    <input type="checkbox" class="checkbox"> <span class="checkboxtext">Trening snage</span>
+                    <input type="checkbox" class="checkbox"> <span class="checkboxtext">Pilates</span>
+                    <input type="checkbox" class="checkbox"> <span class="checkboxtext">Aerobik</span>
+                    <input type="checkbox" class="checkbox"> <span class="checkboxtext">Kik boks</span>
+                </div>
+
+                <div class="input_field">
+                    <label> Popunite ukoliko imate neku napomenu: </label>
+                    <textarea class="textarea"></textarea>
+                </div>
+
+
+
+                <input type="submit" value="Potvrdi" class="btn1">
+                <input type="reset" value="Obriši" class="btn2">
+
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
 
     <script src="script.js"></script>
 
