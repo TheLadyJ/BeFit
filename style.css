@@ -80,6 +80,38 @@ nav.dropDown ul {
   display: block;
 }
 
+@media (min-width: 1200px) {
+  #menu {
+    display: none;
+  }
+  #close {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  header {
+    margin: 20px;
+  }
+
+  nav.regular {
+    display: none;
+  }
+
+  #close {
+    display: none;
+  }
+}
+
+img {
+  float: right;
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
 /*POČETNA stranica*/
 
 #about {
@@ -96,8 +128,6 @@ nav.dropDown ul {
   border: 2px solid #925156;
   border-radius: 5px;
 }
-
-
 
 .slideshow {
   float: center;
@@ -122,8 +152,6 @@ nav.dropDown ul {
     width: 600px;
     height: 600px;
   }
-
-
 }
 
 @media (max-width: 900px) {
@@ -135,19 +163,10 @@ nav.dropDown ul {
     width: 85%;
     height: 40%;
   }
-
 }
 
 /*CENOVNIK stranica*/
 
-img {
-  float: right;
-  height: 30px;
-  width: 30px;
-  margin: 10px;
-  cursor: pointer;
-  text-align: center;
-}
 .tabContainer {
   width: 100%;
   height: 350px;
@@ -207,27 +226,141 @@ img {
   padding: 1rem;
 }
 
-@media (min-width: 1200px) {
-  #menu {
-    display: none;
-  }
-  #close {
-    display: none;
-  }
+/*PRIJAVA stranica*/
+
+.wrapPrijava {
+  max-width: 500px;
+  width: 100%;
+  background: #d7e0eb;
+  margin: 20px auto;
+  padding: 30px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+  border: 2px solid #925156;
+  border-radius: 5px;
 }
 
-@media (max-width: 1200px) {
-  header {
-    margin: 20px;
-  }
+.wrapPrijava .title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #99202a;
+  text-transform: uppercase;
+  text-align: center;
+}
 
-  nav.regular {
-    display: none;
-  }
+.wrapPrijava .form {
+  width: 100%;
+}
 
-  #close {
-    display: none;
-  }
+.wrapPrijava .form form .input_field {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapPrijava .form form .input_field label {
+  width: 200px;
+  color: #000000;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.wrapPrijava .form form .input_field .input,
+.wrapPrijava .form form .input_field .textarea {
+  width: 100%;
+  outline: none;
+  border: 1px solid #d5dbd9;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.wrapPrijava .form form .input_field .textarea {
+  resize: none;
+  height: 125px;
+}
+
+.wrapPrijava .form form .input_field .custom_select {
+  position: relative;
+  width: 100%;
+  height: 37px;
+}
+
+.wrapPrijava .form form .input_field .custom_select select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #d5dbd9;
+  width: 100%;
+  height: 100%;
+  padding: 8px 10px;
+  border-radius: 3px;
+  outline: none;
+}
+
+.wrapPrijava .form form .input_field .custom_select:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  border: 8px solid;
+  border-color: #d5dbd9 transparent transparent transparent;
+  pointer-events: none;
+}
+
+.wrapPrijava .form form .input_field .input:focus,
+.wrapPrijava .form form .input_field .textarea:focus,
+.wrapPrijava .form form .input_field select:focus {
+  border: 1px solid #a72d38;
+}
+
+.wrapPrijava .form form .input_field .checkbox {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.wrapPrijava .form form .input_field .checkboxtext {
+  font-size: 14px;
+  padding: 1px;
+  margin: 1px;
+}
+
+.wrapPrijava .form form .btn1 {
+  border: 1px solid #a72d38;
+  background: #ffffff;
+}
+
+.wrapPrijava .form form .btn2 {
+  border: 1px solid #c5555e;
+  background: #c5555e;
+}
+
+.wrapPrijava .form form .btn2,
+.wrapPrijava .form form .btn1 {
+  width: 20%;
+  border-radius: 3px;
+  padding: 8px 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.wrapPrijava .form form .btn2,
+.wrapPrijava .form form .btn1 {
+  width: 20%;
+  padding: 8px 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.wrapPrijava .form form:last-child {
+  margin-bottom: 0;
+}
+
+.wrapPrijava .form .btn1:hover {
+  background: #ffd8d8;
+}
+.wrapPrijava .form .btn2:hover {
+  background: #c4666e;
 }
 
 /*KONTAKT stranica*/
@@ -351,13 +484,9 @@ img {
 .wrapper .accordion_wrap .accordion_header.active + .accordion_body {
   display: inline-block;
   height: 150px;
-
 }
-
 
 .wrapper .accordion_wrap .accordion_body .lokacija {
   display: flex;
   justify-content: center;
-  }
-
-
+}
