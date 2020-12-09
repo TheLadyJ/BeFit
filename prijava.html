@@ -6,8 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css" type="text/css">
-
-
+    
+    <script>
+        function validate() {
+            const password1 = document.getElementById("pass1");
+            const password2 = document.getElementById("pass2");
+            if (password1.value != password2.value) {
+                alert("Unete lozinke se ne poklapaju!")
+                return false;
+            }
+            alert("Uspešno ste popunili prijavu!")
+            return true;
+        }
+    </script>
 </head>
 
 <body>
@@ -36,7 +47,7 @@
         <div class="title">
             Prijava
         </div>
-        <div class="form">
+        <div class="form" id="prijava" onsubmit="return validate();">
             <form>
 
                 <div class="input_field">
@@ -53,11 +64,11 @@
                 </div>
                 <div class="input_field">
                     <label>Lozinka: </label>
-                    <input type="password" class="input" required>
+                    <input type="password" class="input" id="pass1" required>
                 </div>
                 <div class="input_field">
                     <label>Potvrdi lozinku: </label>
-                    <input type="password" class="input" required>
+                    <input type="password" class="input" id="pass2" required>
                 </div>
 
                 <div class="input_field">
@@ -109,11 +120,6 @@
             </form>
         </div>
     </div>
-
-
-
-
-
 
 
     <script src="script.js"></script>
