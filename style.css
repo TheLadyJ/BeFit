@@ -114,6 +114,7 @@ img {
 
 /*POČETNA stranica*/
 
+/* 
 #about {
   display: flex;
   flex-flow: column;
@@ -123,24 +124,27 @@ img {
 }
 
 #description {
-  padding: 15px;
-  background-color: #ffffff;
+  max-width: 500px;
+  width: 100%;
+  background: #d7e0eb;
+  margin: 10px; 
+  padding: 30px;
   border: 2px solid #925156;
   border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  color: #99202a;
 }
 
-.slideshow {
-  float: center;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
+.slideshow{
+    margin-top: 35px;
 }
 
 .slideshow img {
-  width: 95%;
-  height: auto;
-  padding: 2%;
+  border: 3px solid #925156;
+  border-radius: 5px;
+  cursor: auto;
 }
 
 @media (min-width: 900px) {
@@ -148,7 +152,7 @@ img {
     width: 60%;
   }
 
-  .slideshowBack {
+  .slideshow {
     width: 600px;
     height: 600px;
   }
@@ -159,11 +163,15 @@ img {
     width: 80%;
   }
 
-  .slideshowBack {
+
+  .slideshow {
     width: 85%;
     height: 40%;
   }
-}
+} */
+ 
+
+
 
 /*CENOVNIK stranica*/
 
