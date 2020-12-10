@@ -262,12 +262,6 @@ img {
     width: 500px;
   }
 
-  /*Za promenu veličine teksta koji se nalazi uz checkbox*/
-  .wrapPrijava .form form .input_field .checkboxtext {
-  font-size: 14px;
-  padding: 1px;
-  margin: 1px;
-}
 }
 
 @media (max-width: 900px) {
@@ -275,13 +269,8 @@ img {
     width: 85%;
   } 
 
-  /*Za promenu veličine teksta koji se nalazi uz checkbox*/
-.wrapPrijava .form form .input_field .checkboxtext {
-  font-size: 14px;
-  padding: 1px;
-  margin: 1px;
 }
-}
+
 
 .wrapPrijava {
   background: #d7e0eb;
@@ -370,6 +359,12 @@ img {
   cursor: pointer;
 }
 
+/*Za promenu veličine teksta koji se nalazi uz checkbox*/
+.wrapPrijava .form form .input_field .checkboxtext {
+  font-size: 14px;
+  padding: 1px;
+  margin: 1px;
+}
 
 
 /*Odnosi se na dugme potvrdi*/
