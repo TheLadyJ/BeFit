@@ -10,12 +10,22 @@
     <!-- Funkcija koja se poziva prilikom klika na SUBMIT dugme u formi -->
     <script>
         function validate() {
+            const ime = document.getElementById("ime");
+            const prezime = document.getElementById("prezime");
             /*Radi se provera poklapanja lozinki*/
             const password1 = document.getElementById("pass1");
             const password2 = document.getElementById("pass2");
             if (password1.value != password2.value) {
                 alert("Unete lozinke se ne poklapaju!")
                 /*Vrednost koja se vraća određuje da li će se radnje SUBMIT izvršiti*/
+                return false;
+            }
+            else if(ime.size="15"){
+                alert("Ime mora biti manje od 15 karaktera!")
+                return false;
+            }
+            else if(prezime.size="30"){
+                alert("Ime mora biti manje od 30 karaktera!")
                 return false;
             }
             alert("Uspešno ste popunili prijavu!")
@@ -56,14 +66,14 @@
 
         <div class="form" id="prijava" onsubmit="return validate();">
             <form>
-                
+
                 <div class="input_field">
                     <label>Ime: </label>
-                    <input type="text" class="input" required>
+                    <input type="text" class="input" id="ime" required>
                 </div>
                 <div class="input_field">
                     <label>Prezime: </label>
-                    <input type="text" class="input" required>
+                    <input type="text" class="input" id="prezime" required>
                 </div>
                 <div class="input_field">
                     <label>Email adresa: </label>
