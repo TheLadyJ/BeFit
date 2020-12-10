@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
-<body>
+<body onload=display_dt()>
 
     <header>
         <a href="index.html" class="logo">BE FIT</a>
@@ -19,6 +19,8 @@
         </div>
         <nav class="regular" id="options">
             <ul>
+                <li> <p id="vreme">Vreme: <span id='dt' ></span></p>
+                </li>  
                 <li> <a href="index.html">Početna</a> </li>
                 <li> <a href="#" class="active">Cenovnik</a> </li>
                 <li> <a href="prijava.html">Prijava</a> </li>
@@ -27,6 +29,7 @@
         </nav>
         <div class="clearfix"></div>
     </header>
+
     <div class="tabContainer">
         <div class="buttonContainer">
             <button onclick="showPanel(0,'#f44336')">Standard</button>
@@ -123,7 +126,7 @@
     </div>
 
 
-
+    <!-- Povezan sa JS-om zbog f-ja padajućeg menija takođe zbog samog cenovnika -->
     <script src="script.js"></script>
 
 </body>
