@@ -277,7 +277,7 @@ img {
 
   /*Za promenu veličine teksta koji se nalazi uz checkbox*/
 .wrapPrijava .form form .input_field .checkboxtext {
-  font-size: 11px;
+  font-size: 14px;
   padding: 1px;
   margin: 1px;
 }
