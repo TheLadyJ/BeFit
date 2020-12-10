@@ -413,6 +413,7 @@ img {
   .wrapper {
     width: 70%;
   }
+  
 }
 
 
@@ -527,7 +528,12 @@ img {
   height: 150px;
 }
 
-.wrapper .accordion_wrap .accordion_body .lokacija {
+.wrapper .accordion_wrap .accordion_body .lokacija{
   display: flex;
-  justify-content: center;
+  justify-content: center; 
+ 
+}
+
+.wrapper .accordion_wrap .accordion_body .lokacija iframe{
+  max-width: 100%;
 }
