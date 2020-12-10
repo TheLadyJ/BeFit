@@ -4,8 +4,8 @@ body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   background: url(slike/pozadina.jpg);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-attachment: fixed; /*Pozadina ostaje na istom mestu čak i kad se skroluje*/
+  background-repeat: no-repeat; /*Slika pozadine se ne ponavlja beskonačno puta*/ 
   background-position: center;
   background-size: cover;
   position: center;
@@ -37,33 +37,52 @@ header {
   text-decoration: none;
 }
 
-nav {
-  float: right;
+#vreme{
+  padding: 0 20px;
+  margin-top: 25px;
 }
 
+
+/*Da se uklone dotadašnja flex svojstva*/
 .clearfix {
   clear: both;
 }
 
+
+/*Opcije u meniju (Pocetna, Cenovnik, Prijava i Kontakt)*/
+
+/*Opcije menija se nalaze na desnoj strani (kada nije opadajući već regularan)*/
+nav {
+  float: right;
+}
+
+/*Svojstva leiste opcija*/
 nav ul {
   margin: 0;
   padding: 0;
   display: flex;
 }
 
+/*Svojstvo elementa liste odnosno opcije da nema redni broj, bullet ili slično*/
 nav ul li {
   list-style: none;
 }
 
 nav ul li a {
   display: block;
+  /*margina predstavlja odvojenost samih elemenata menija tj. opcija*/
+  /*10px sa vrha i dna i 0 sa leve i desne strane*/
   margin: 10px 0;
+  /*padding - udaljenost teksta u odnosu na ivice opcije*/
+  /*10px sa vrha i dna i 20px sa leve i desne strane */
   padding: 10px 20px;
   text-decoration: none;
   color: #262626;
+  /*visina teksta unutar opcije (visina a ne font-size zbog slova č)*/
   height: 20px;
 }
 
+/*Opcija na meniju za trenutnu stranu ima klasu active, pa su ta strana i bilo koja na koju hover-ujemo ovek obojene*/
 nav ul li a.active,
 nav ul li a:hover {
   background: #a72d38;
@@ -71,16 +90,24 @@ nav ul li a:hover {
   transition: 0.5s;
 }
 
+/*Nav tag (jedini nav koji postoji sa id-jem "opcije") KADA IMA KLASU dropDown*/
+/*Ta klasa se dodaje ovom tagu prilikom poziva f-je toggleMenu() u JS-u*/
+/*Time što je pozvana ta f-ja i promenjena klasa, zapravo se pozivaju i svojstva padajućeg menija*/
 nav.dropDown {
+  /*padajuć meni ima drugačiji prikaz od običnog - dakle block*/
   display: block;
+  /*i zauzima čitavu dužinu ekrana*/
   width: 100%;
 }
 
+/*Same opcije menija takođe imaju display block*/
 nav.dropDown ul {
   display: block;
 }
 
+/*menu i close su id-jevi ikonica padajućeg menija koje se pojavljuju kada ekran nije dovoljno veliki da prikaže sve opcije menija*/
 @media (min-width: 1200px) {
+  /*Za dovoljno veliki ekran, ikonice se neće videti*/
   #menu {
     display: none;
   }
@@ -94,15 +121,19 @@ nav.dropDown ul {
     margin: 20px;
   }
 
+  /*Kada je ekran mali, opcije menija se ne prikazuju (dok se ne klikne na ikonicu)*/
   nav.regular {
     display: none;
   }
-
+  
+  /*Čak i kada je ekran mali, ikonica za zatvaranje menija se ne vidi već samo onda kada je padajući meni otvoren*/
   #close {
     display: none;
   }
 }
 
+
+/*Svojstva ikonica menija*/
 img {
   float: right;
   height: 30px;
@@ -114,20 +145,27 @@ img {
 
 /*POČETNA stranica*/
 
-/* 
+
+/*div sa id-jem about predstavlja grupisan tekst i galeriju slika koji se prikazuju na početnoj stranici*/
 #about {
+  /*Elementi koji su u ovom div-u (tekst iu galerija) su raspoređeni u koloni putem flex-a*/
   display: flex;
   flex-flow: column;
-  justify-content: space-around;
+  justify-content: space-around; 
+  /*Ti isti elementi su centrirani*/
   align-items: center;
+  /*Njihova margina sa vrha je 80px sa desne i leve strane je auto i sa dna je 0*/
   margin: 80px auto 0;
 }
 
+/*Svojstva teksta koji je 1. element div-a about*/
 #description {
   max-width: 500px;
   width: 100%;
   background: #d7e0eb;
+  /*Margina sa vrha*/
   margin: 10px; 
+  /*Padding samog teksta unutar ovog elementa*/
   padding: 30px;
   border: 2px solid #925156;
   border-radius: 5px;
@@ -137,22 +175,27 @@ img {
   color: #99202a;
 }
 
+/*Svojstvo klase koja sadrži galeriju - margina samo*/
 .slideshow{
     margin-top: 35px;
 }
 
+/*Svaka slika galerija ima okvir*/
 .slideshow img {
   border: 3px solid #925156;
   border-radius: 5px;
+  /*Kako miš ne bi bio "pointer"*/
   cursor: auto;
 }
+
+/*Sam tekst i galerija moraju biti responzivni pa se u odnostu na veličinu ekrana koristi odgovarajuća širina/visina*/
 
 @media (min-width: 900px) {
   #description {
     width: 60%;
   }
-
-  .slideshow {
+  
+  .slideshow img {
     width: 600px;
     height: 600px;
   }
@@ -160,18 +203,16 @@ img {
 
 @media (max-width: 900px) {
   #description {
-    width: 80%;
+    width: 75%;
   }
 
-
-  .slideshow {
-    width: 85%;
-    height: 40%;
+  .slideshow img {
+    float: center;
+    width: 300px;
+    height: auto;
   }
-} */
+}
  
-
-
 
 /*CENOVNIK stranica*/
 
@@ -236,23 +277,41 @@ img {
 
 /*PRIJAVA stranica*/
 
+@media (min-width: 900px) {
+  .wrapPrijava {
+    width: 500px;
+  }
+}
+
+@media (max-width: 900px) {
+  .wrapPrijava {
+    width: 90%;
+  }
+}
+
 .wrapPrijava {
-  max-width: 500px;
-  width: 100%;
+  /*plavkasto-siva pozadina forme*/
   background: #d7e0eb;
+  /*Sama forma biće sa gornje i gonje strane biti odvojena od strane (tj. drugih elemenata) 20px*/
   margin: 20px auto;
+  /*tekst u samoj formi biće odvojen 30px sa svih strana*/
   padding: 30px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125); 
   border: 2px solid #925156;
   border-radius: 5px;
 }
 
+/*Odnosi se na naslov (mada je samo tekst u pitanju) "Prijava" koji se nalazi pre same forme*/
 .wrapPrijava .title {
+  /*Veličina i debljina slova su ovde podešena tako da nema potreba da bude h1 ili slično*/
   font-size: 24px;
   font-weight: 700;
+  /*Ovaj naslov je odvojen od forme sa donje strane za 25 px*/
   margin-bottom: 25px;
   color: #99202a;
+  /*Tekst je velikim slovima*/
   text-transform: uppercase;
+  /*Tekst se nalazi na centru prostora za prijavu*/
   text-align: center;
 }
 
@@ -260,89 +319,103 @@ img {
   width: 100%;
 }
 
+/*.input_field predstavlja i labelu i input polje*/
 .wrapPrijava .form form .input_field {
+  /*Ispod svakog input reda nalazi se prostor od 25px*/
   margin-bottom: 15px;
+  /*Ti input redovi imaju display flex*/
   display: flex;
   align-items: center;
 }
 
+/*Labela je npr Ime:, Prezime: itd.*/
 .wrapPrijava .form form .input_field label {
+  /*Labela ima dužinu od 200px bez obzira na dužinu teksta*/
   width: 200px;
   color: #000000;
+  /*Labela je odvojena od input polja koje mu je sa desne strane za 10px*/
   margin-right: 10px;
+  /*Veličina teksta labele*/
   font-size: 14px;
 }
 
 .wrapPrijava .form form .input_field .input,
 .wrapPrijava .form form .input_field .textarea {
+  /*Jedno input polje će ići do kraja jednog reda*/
   width: 100%;
+  /*Prilikom klika na polje neće se prikazati "automatski" okvir već ćemo ga mi naknadno stvoriti*/
   outline: none;
+  /*Ovir ovih input polja je boje poyadine zapravo*/
   border: 1px solid #d5dbd9;
+   /*Taj okvir je zakrivljen na ćoškovima*/
+   border-radius: 3px;
   font-size: 15px;
+  /*U samom input polju tekst je sa gornje i donje strane odvojen za 8 px a sa leve i desne strane za 10px*/
   padding: 8px 10px;
-  border-radius: 3px;
   transition: all 0.3s ease;
 }
 
+
 .wrapPrijava .form form .input_field .textarea {
+  /*Onemogućava da se textarea povećava i smanjuje od strane korisnika*/
   resize: none;
+  /*Ima fiksnu visinu*/
   height: 125px;
 }
 
+/*Odnosi se na input polje za odabir lokacije*/
 .wrapPrijava .form form .input_field .custom_select {
   position: relative;
   width: 100%;
   height: 37px;
 }
 
+/*U momentu kad je korisnik kliknuo na polje za odabir lokacije*/
 .wrapPrijava .form form .input_field .custom_select select {
-  -webkit-appearance: none;
-  appearance: none;
   border: 1px solid #d5dbd9;
   width: 100%;
+  /*Ima visini 100% visine prethodno podešene za div .custom_select u kome se nalazi tag select*/
   height: 100%;
   padding: 8px 10px;
   border-radius: 3px;
   outline: none;
+  cursor: pointer;
 }
 
-.wrapPrijava .form form .input_field .custom_select:before {
-  content: "";
-  position: absolute;
-  top: 12px;
-  right: 10px;
-  border: 8px solid;
-  border-color: #d5dbd9 transparent transparent transparent;
-  pointer-events: none;
-}
-
+/*U momentu kada se klikne na bilo koje input polje ono dobije crveni okvir*/
 .wrapPrijava .form form .input_field .input:focus,
 .wrapPrijava .form form .input_field .textarea:focus,
 .wrapPrijava .form form .input_field select:focus {
   border: 1px solid #a72d38;
 }
 
-.wrapPrijava .form form .input_field .checkbox {
-  position: relative;
-  display: block;
+.wrapPrijava .form form .input_field .checkbox{
+  width: 100%;
   cursor: pointer;
 }
+
+/*Za promenu veličine teksta uz checkbox*/
 .wrapPrijava .form form .input_field .checkboxtext {
   font-size: 14px;
   padding: 1px;
   margin: 1px;
 }
 
+/*Odnosi se na dugme potvrdi*/
 .wrapPrijava .form form .btn1 {
+  /*Okvir i pozadina dugmeta*/
   border: 1px solid #a72d38;
   background: #ffffff;
 }
 
+/*Odnosi se na dugme obriši*/
 .wrapPrijava .form form .btn2 {
+  /*Okvir i pozadina dugmeta*/
   border: 1px solid #c5555e;
   background: #c5555e;
 }
 
+/*Odnosi se na oba dugmeta*/
 .wrapPrijava .form form .btn2,
 .wrapPrijava .form form .btn1 {
   width: 20%;
@@ -350,18 +423,6 @@ img {
   padding: 8px 10px;
   font-size: 15px;
   cursor: pointer;
-}
-
-.wrapPrijava .form form .btn2,
-.wrapPrijava .form form .btn1 {
-  width: 20%;
-  padding: 8px 10px;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.wrapPrijava .form form:last-child {
-  margin-bottom: 0;
 }
 
 .wrapPrijava .form .btn1:hover {
@@ -371,15 +432,19 @@ img {
   background: #c4666e;
 }
 
+
 /*KONTAKT stranica*/
 
+
 .wrapper {
+  /*Margina za vrh, zatim levo-desno i dno*/
   margin: 80px auto 0;
   background-color: #d7e0eb;
   border: 2px solid #925156;
   border-radius: 5px;
 }
 
+/*Promena odeljka Gde nas možete naći u zavisnosti od veličine ekrana*/
 @media (min-width: 900px) {
   .wrapper {
     width: 800px;
@@ -388,46 +453,54 @@ img {
 
 @media (max-width: 900px) {
   .wrapper {
-    width: 90%;
+    width: 70%;
   }
 }
+
 
 .wrapper h2 {
   padding: 15px;
   color: #99202a;
   position: relative;
-  width: 23rem;
+  width: 23rem; /*rem=16px*/
 }
 
+/*klasa accordion_wrap odnosi se na jednu opciju kao npr naslov Vračar i njegove informacije sa mapom*/
 .wrapper .accordion_wrap {
+  /*Ima dužinu 100% dužine wrapper-a u kom se nalazi*/
   width: 100%;
 }
 
 .wrapper .accordion_wrap .accordion_header {
   height: 30px;
   background-color: #ffffff;
+  /*Naslov je odvojen 15px u odnosu na ivice opcije*/
   padding: 15px;
   color: #ad3f48;
   font-size: 20px;
   font-weight: 700;
+  /*Tamnija crvena ivica koja postoji na dnu jedne opcije i služi da je vizuelno odvoji od drugih (u momentu hover-a ova donja ivica potamni)*/
   border-bottom: 2px solid #a72d38;
   position: relative;
   cursor: pointer;
 }
 
+/*Poslednja opcija neće imati crvenu ivicu na dnu*/
 .wrapper .accordion_wrap:last-child .accordion_header {
   border-bottom: 2px solid transparent;
 }
 
 .wrapper .accordion_wrap .accordion_header:hover {
   color: #861a23;
-  border-color: #861a23;
+  border-color: #861a23; 
 }
 
+/*Za poslednju opciju ne postoji donja ivica koja bi inače bila tamna prilikom hover-a*/
 .wrapper .accordion_wrap:last-child .accordion_header:hover {
   border-bottom: 2px solid transparent;
 }
 
+/*---DETALJ plus koji se pretvara u minus---*/
 .wrapper .accordion_wrap .accordion_header:before,
 .wrapper .accordion_wrap .accordion_header:after {
   content: "";
@@ -445,10 +518,10 @@ img {
   transition: all 0.5s ease;
 }
 
-.wrapper .accordion_wrap .accordion_header:hover:before,
-.wrapper .accordion_wrap .accordion_header:hover:after {
-  background: #861a23;
-}
+.wrapper .accordion_wrap .accordion_header.active:after {
+  transform: rotate(0);
+} 
+/*---*/
 
 .wrapper .accordion_wrap .accordion_body {
   width: 100%;
@@ -458,6 +531,7 @@ img {
   display: none;
 }
 
+/*p je za info telefon*/
 .wrapper .accordion_wrap .accordion_body p {
   padding: 15px;
   font-size: 17px;
@@ -465,6 +539,7 @@ img {
   color: #ffffff;
 }
 
+/*a je za naziv ulice tj. link ka google mapama*/
 .wrapper .accordion_wrap .accordion_body a {
   padding: 15px;
   font-size: 17px;
@@ -472,13 +547,15 @@ img {
   color: #ffffff;
 }
 
+/*U momentu kada selektujemo neku opciju, njoj se dodaje klasa active pa zadržava tamniju boju naslova*/
 .wrapper .accordion_wrap .accordion_header.active {
   color: #861a23;
   border-color: #861a23;
 }
 
+/*Čak i kad je poslednja opcija aktivirana, posotoji tamna crvena ivica na dnu naslova */
 .wrapper .accordion_wrap:last-child .accordion_header.active {
-  border-bottom: 2px solid #a72d38;
+  border-bottom: 2px solid #861a23;
 }
 
 .wrapper .accordion_wrap .accordion_header.active:before,
@@ -486,9 +563,9 @@ img {
   background: #a03a42;
 }
 
-.wrapper .accordion_wrap .accordion_header.active:after {
-  transform: rotate(0);
-}
+
+
+/*U MOMENTU kada se klikne na naslov, klasa accordion_header poprimi klasu active(putem jQuery-ja), i može da se prikaže telo opcije  */
 .wrapper .accordion_wrap .accordion_header.active + .accordion_body {
   display: inline-block;
   height: 150px;

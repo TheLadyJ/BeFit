@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="stylesheet" href="pocetna-style.css" type="text/css">
 
+    <!-- script koji obezbeđuje korišćenje jQuery-ja -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"> </script>
+    <!-- script koji obezbeđuje korišćenje specifičnog jQuery plugin-a (CYCLE) -->
     <script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
+    <!-- Funkicja putem koje se poziva jQuery plugin CYCLE -->
     <script type="text/javascript">
         $(document).ready(function () {
             $('.slideshow').cycle({
+                /*Opcija fade koja predstavlja tranziciju slika galerija*/
                 fx: 'fade'
             });
         });
@@ -20,17 +23,23 @@
 
 </head>
 
-<body>
-
+<body onload=display_dt()>
+    <!-- Meni -->
     <header>
         <a href="index.html" class="logo">BE FIT</a>
         <div class="menu-toggle">
+            <!-- Ikonice za padajući meni i f-ja koje se pozivaju u zavisnosti da li se meni otvoren ili zatvoren -->
             <img src="slike/menu.png" id="menu" alt="" onclick="showClose()">
             <img src="slike/close.png" id="close" alt="" onclick="showMenu()">
 
         </div>
+        <!-- Kroz menjanje klase nav-a mi ćemo imati ili običan ili opadajući meni -->
         <nav class="regular" id="options">
             <ul>
+                <li>
+                    <p id="vreme">Vreme: <span id='dt'></span></p>
+                </li>
+                <!-- Klasa active služi da na meniju opcija trenutne stranice bude sve vreme obojena -->
                 <li> <a href="#" class="active">Početna</a> </li>
                 <li> <a href="treninzi.html">Cenovnik</a> </li>
                 <li> <a href="prijava.html">Prijava</a> </li>
@@ -48,6 +57,7 @@
                 i koji su tu uvek da vam pomognu da ostvarite vaše želje o dobrom izgledu i zdravlju.</p>
         </div>
 
+        <!-- Specifična deklaracija galerije kako bi se jQuery plugin mogao iskoristiti -->
         <div class="slideshow" style="position: relative;">
             <img src="galerija/befit.jpg" width="700" height="700">
             <img src="galerija/bodycontrol.jpg" width="700" height="700">
@@ -62,7 +72,7 @@
 
 
 
-
+    <!-- Povezan sa JS-om zbog f-ja padajućeg menija -->
     <script src="script.js"></script>
 
 </body>

@@ -17,12 +17,9 @@
             })
         })
     </script>
-
-
-
 </head>
 
-<body>
+<body onload=display_dt()>
 
     <header>
         <a href="index.html" class="logo">BE FIT</a>
@@ -33,6 +30,9 @@
         </div>
         <nav class="regular" id="options">
             <ul>
+                <li> <p id="vreme">Vreme: <span id='dt' ></span></p>
+                </li> 
+                <!-- Klasa active služi da na meniju opcija trenutne stranice bude sve vreme obojena -->
                 <li> <a href="index.html">Početna</a> </li>
                 <li> <a href="treninzi.html">Cenovnik</a> </li>
                 <li> <a href="prijava.html">Prijava</a> </li>
@@ -41,6 +41,7 @@
         </nav>
         <div class="clearfix"></div>
     </header>
+
 
     <div class="wrapper">
         <h2>Gde nas možete naći:</h2>
@@ -85,7 +86,7 @@
 
     </div>
 
-
+    <!-- Povezan sa JS-om zbog f-ja padajućeg menija -->
     <script src="script.js"></script>
 
 </body>
