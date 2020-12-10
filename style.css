@@ -4,8 +4,8 @@ body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   background: url(slike/pozadina.jpg);
-  background-attachment: fixed; 
-  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: center;
@@ -37,16 +37,14 @@ header {
   text-decoration: none;
 }
 
-#vreme{
+#vreme {
   padding: 0 20px;
   margin-top: 25px;
 }
 
-
 .clearfix {
   clear: both;
 }
-
 
 /*Ovo se odnosi na opcije u meniju (Pocetna, Cenovnik, Prijava i Kontakt)*/
 
@@ -75,7 +73,6 @@ nav ul li a {
   height: 20px;
 }
 
-
 nav ul li a.active,
 nav ul li a:hover {
   background: #a72d38;
@@ -92,7 +89,6 @@ nav.dropDown {
 nav.dropDown ul {
   display: block;
 }
-
 
 @media (min-width: 1200px) {
   /*Za dovoljno veliki ekran, ikonice za padajući meni se neće videti*/
@@ -112,12 +108,11 @@ nav.dropDown ul {
   nav.regular {
     display: none;
   }
-  
+
   #close {
     display: none;
   }
 }
-
 
 /*Svojstva ikonica menija*/
 img {
@@ -131,12 +126,11 @@ img {
 
 /*POČETNA stranica*/
 
-
 /*about obuhvata description i slideshow*/
 #about {
   display: flex;
   flex-flow: column;
-  justify-content: space-around; 
+  justify-content: space-around;
   align-items: center;
   margin: 80px auto 0;
 }
@@ -145,7 +139,7 @@ img {
   max-width: 500px;
   width: 100%;
   background: #d7e0eb;
-  margin: 10px; 
+  margin: 10px;
   padding: 30px;
   border: 2px solid #925156;
   border-radius: 5px;
@@ -155,10 +149,9 @@ img {
   color: #99202a;
 }
 
-.slideshow{
-    margin-top: 35px;
+.slideshow {
+  margin-top: 35px;
 }
-
 
 .slideshow img {
   border: 3px solid #925156;
@@ -167,13 +160,12 @@ img {
   cursor: auto;
 }
 
-
 /*Za responzivnost teksta i glerije slika*/
 @media (min-width: 900px) {
   #description {
     width: 60%;
   }
-  
+
   .slideshow img {
     width: 600px;
     height: 600px;
@@ -191,7 +183,6 @@ img {
     height: auto;
   }
 }
- 
 
 /*CENOVNIK stranica*/
 
@@ -262,21 +253,32 @@ img {
     width: 500px;
   }
 
+  /*Za promenu veličine teksta koji se nalazi uz checkbox*/
+  .wrapPrijava .form form .input_field .checkboxtext {
+    font-size: 14px;
+    padding: 1px;
+    margin: 1px;
+  }
 }
 
 @media (max-width: 900px) {
   .wrapPrijava {
-    width: 85%;
-  } 
+    width: 80%;
+  }
 
+  /*Za promenu veličine teksta koji se nalazi uz checkbox*/
+  .wrapPrijava .form form .input_field .checkboxtext {
+    font-size: 11px;
+    padding: 1px;
+    margin: 1px;
+  }
 }
-
 
 .wrapPrijava {
   background: #d7e0eb;
   margin: 20px auto;
   padding: 30px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125); 
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
   border: 2px solid #925156;
   border-radius: 5px;
 }
@@ -317,12 +319,11 @@ img {
   /*Prilikom klika na polje neće se prikazati "automatski" okvir već ćemo ga mi naknadno stvoriti*/
   outline: none;
   border: 1px solid #d5dbd9;
-   border-radius: 3px;
+  border-radius: 3px;
   font-size: 15px;
   padding: 8px 10px;
   transition: all 0.3s ease;
 }
-
 
 .wrapPrijava .form form .input_field .textarea {
   resize: none;
@@ -354,18 +355,10 @@ img {
   border: 1px solid #a72d38;
 }
 
-.wrapPrijava .form form .input_field .checkbox{
+.wrapPrijava .form form .input_field .checkbox {
   width: 100%;
   cursor: pointer;
 }
-
-/*Za promenu veličine teksta koji se nalazi uz checkbox*/
-.wrapPrijava .form form .input_field .checkboxtext {
-  font-size: 14px;
-  padding: 1px;
-  margin: 1px;
-}
-
 
 /*Odnosi se na dugme potvrdi*/
 .wrapPrijava .form form .btn1 {
@@ -396,7 +389,6 @@ img {
   background: #c4666e;
 }
 
-
 /*KONTAKT stranica*/
 
 .wrapper {
@@ -417,15 +409,13 @@ img {
   .wrapper {
     width: 70%;
   }
-  
 }
-
 
 .wrapper h2 {
   padding: 15px;
   color: #99202a;
   position: relative;
-  width: 23rem; 
+  width: 23rem;
 }
 
 /*klasa accordion_wrap odnosi se na jednu opciju kao npr naslov Vračar i njegove informacije sa mapom*/
@@ -453,7 +443,7 @@ img {
 
 .wrapper .accordion_wrap .accordion_header:hover {
   color: #861a23;
-  border-color: #861a23; 
+  border-color: #861a23;
 }
 
 /*Za poslednju opciju ne postoji donja ivica koja bi inače bila tamna prilikom hover-a*/
@@ -481,7 +471,7 @@ img {
 
 .wrapper .accordion_wrap .accordion_header.active:after {
   transform: rotate(0);
-} 
+}
 /*---*/
 
 /*Odnosi se na telo jedne opcije*/
@@ -525,19 +515,17 @@ img {
   background: #a03a42;
 }
 
-
 /*U MOMENTU kada se klikne na naslov, klasa accordion_header poprimi klasu active(putem jQuery-ja), i može da se prikaže telo opcije  */
 .wrapper .accordion_wrap .accordion_header.active + .accordion_body {
   display: inline-block;
   height: 150px;
 }
 
-.wrapper .accordion_wrap .accordion_body .lokacija{
+.wrapper .accordion_wrap .accordion_body .lokacija {
   display: flex;
-  justify-content: center; 
- 
+  justify-content: center;
 }
 
-.wrapper .accordion_wrap .accordion_body .lokacija iframe{
+.wrapper .accordion_wrap .accordion_body .lokacija iframe {
   max-width: 100%;
 }
