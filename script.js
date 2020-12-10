@@ -1,10 +1,6 @@
  /*PADAJUĆI MENI*/
-
- /*vreme
- var dt = new Date();
- dt.refresh=1000;
- document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();*/
-
+ 
+/*Sat koji otkucava kao prva stavka menija*/
  function display_t() {
      mytime = setTimeout('display_dt()', 1000)
  }
@@ -15,32 +11,30 @@
      display_t();
  }
 
+ /* Funkcije za ikonice padajućeg menija*/
+
  let menuIcon = document.getElementById("menu");
  let closeIcon = document.getElementById("close");
 
- /*Ova f-ja se poyiva kada se klikne na standardnu ikonicu menija*/
+ /*Ova f-ja se poziva kada se klikne na standardnu ikonicu menija za njegovo otvaranje*/
  function showClose() {
-     /*Ovim se aktivira način na koji se close ikonica vidi*/
      closeIcon.style.display = "flex";
-     /*A pri tom se meni ikonica (tri vodoravne linije) više ne vidi*/
      menuIcon.style.display = "none";
-     /*Ovim se aktivira vidljivost ikonice close*/
      closeIcon.style.visibility = "visible";
      toggleMenu();
  }
 
+ /*Ova f-ja se poziva kada se klikne na ikonicu za zatvaranje padajućeg menija*/
  function showMenu() {
-     /*Ovim se aktivira način na koji se meni ikonica vidi*/
      menuIcon.style.display = "flex";
-     /*A pri tom se close ikonica (iksić) više ne vidi*/
      closeIcon.style.visibility = "hidden";
-     /*Ovim se aktivira vidljivost ikonice meni*/
      menuIcon.style.visibility = "visible";
      toggleMenu();
  }
 
- /*Ovde se menja klasa nav-a (koji ima id "options") kako bi se opcije opadajućeg menija prikazale odnosno sakrile*/
+ /*Ovde se menja klasa nav-a (koji ima id "options")*/
  function toggleMenu() {
+     /* Zbog promene klase nav-a će se koristiti drugačija CSS svojstva menija*/
      let x = document.getElementById("options");
      if (x.className === "regular") {
          x.className = "dropDown";
